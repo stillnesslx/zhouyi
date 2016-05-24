@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include "time.h"
 
-//rxl
+//rxl 2016
 unsigned int randint(unsigned int l, unsigned int u)
 {
     return l + (RAND_MAX * rand() + rand()) % (u-l);
