@@ -21,7 +21,7 @@ int main()
     char neg[4] = "- -";
     char pna[4][4] = {"- -","---","- -","---"};
     char cpna[4][4] = {"---","---","- -","- -"};
-    printf("%s:%s:%s:%s",pna[0],pna[1],pna[2],pna[3]);
+    //printf("%s:%s:%s:%s",pna[0],pna[1],pna[2],pna[3]);
 
     unsigned int i,j;
     unsigned int sen,sky,earth,people;
@@ -39,7 +39,7 @@ int main()
         for(j=0;j<3;j++)
         {
             sky = randint(1,sen-1);
-            //printf("sky:%d\r\n",sky);
+            printf("sky:%d\r\n",sky);
             earth = sen - sky - 1;
             //printf("%d",sky);
             //(0 == randint(0,2)) ? (sky = sky -1) : (earth = earth - 1);
@@ -48,7 +48,8 @@ int main()
             sen = sen - sky - earth - people;
             //printf("i=%d,j=%d,sky:%d,earth:%d,sen%d\r\n",i,j,sky,earth,sen);
         }
-        assert(0 == (es[i] % 4));
+        //printf("sen:%d",sen);
+        assert((24 == sen) || (28 == sen) || (32 == sen) || (36 == sen));
         es[i] = sen / 4;
        // printf("sen:%d,es[%d]:%d\r\n",sen,i,es[i]);
        // printf("es:%d\r\n",es[i]);
@@ -56,7 +57,7 @@ int main()
 
     for(i=0;i<6;i++)
     {
-        printf("\r\n %d: %s  %s",es[5-i],pna[es[5-i]-6],cpna[es[5-i]-6]);
+        printf("\r\n %d: %s    %s",es[5-i],pna[es[5-i]-6],cpna[es[5-i]-6]);
     }
     printf("\r\n");
     return 0;
